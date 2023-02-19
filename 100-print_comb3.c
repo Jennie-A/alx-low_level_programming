@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * main - All possible combination of two digits
+ * main - (void)
  *
  * Return: Always 0
  */
@@ -26,3 +26,4 @@ int main(void)
 	putchar('\n');
 	return (0);
 }
+

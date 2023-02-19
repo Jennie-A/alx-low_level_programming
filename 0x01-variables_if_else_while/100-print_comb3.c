@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	int fist;
+	int first;
 	int second;
 
 	for (first = 0; first < 9; first++)

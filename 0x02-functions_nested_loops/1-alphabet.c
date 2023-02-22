@@ -7,10 +7,10 @@
  */
 void print_alphabet(void)
 {
-	char Lowercase;
+	char lowercase;
 
-	for (Lowercase = 'a'; Lowercase <= 'z'; Lowercase++)
-		_putchar('Lowercase');
+	for (lowercase = 'a'; lowercase <= 'z'; lowercase++)
+		_putchar(lowercase);
 	_putchar('\n');
 
 }

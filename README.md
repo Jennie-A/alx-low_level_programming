@@ -1,1 +1,1 @@
-My first C prgramming
+Debugging and the use of RUBBER DUCK - C Programming

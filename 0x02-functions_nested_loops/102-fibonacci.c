@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - prints 5 Fibonacci numbers starting
+ * main - prints 50 Fibonacci numbers starting
  * with 1 and 2 separated by comma and a space
  *
  * Return: Always 0
@@ -14,7 +14,7 @@ int main(void)
 	for (count = 0; count < 50; count++)
 	{
 		sum = fib1 + fib2;
-		printf("lu%", sum);
+		printf("%lu", sum);
 
 		fib1 = fib2;
 		fib2 = sum;

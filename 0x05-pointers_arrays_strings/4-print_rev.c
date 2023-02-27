@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_rev - the fuction prints a string in reverse
+ * print_rev - imprime en reversa
  * followed by a new line
  *
  * @s: the string
@@ -9,7 +9,7 @@
  */
 void print_rev(char *s)
 {
-	int longi = 0
+	int longi = 0;
 	int o;
 
 	while (*s != '\0')

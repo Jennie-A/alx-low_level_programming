@@ -12,6 +12,8 @@ int main(int argc, char *argv[])
 {
 	int i;
 
+	argv(void);
+
 	for (i = 1; i >= 1; i++)
 	printf("%d\n", argc);
 

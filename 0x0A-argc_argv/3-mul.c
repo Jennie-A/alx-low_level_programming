@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		printf("error\n");
 		return (1);
 	}
-	else if
+
 
 		a = atoi(argv[1]);
 		b = atoi(argv[2]);

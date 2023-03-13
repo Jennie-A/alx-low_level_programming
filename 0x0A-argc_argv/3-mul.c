@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	else if
-	{
+
 		a = atoi(argv[1]);
 		b = atoi(argv[2]);
 		results = a * b;
@@ -28,5 +28,5 @@ int main(int argc, char *argv[])
 		printf("%d\n", results);
 
 		return (0);
-	}
+
 }

@@ -27,7 +27,7 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 	}
 
-	for (couting = 0; counting < size; couting++)
+	for (counting = 0; counting < size; counting++)
 	{
 		p[counting] = c;
 	}

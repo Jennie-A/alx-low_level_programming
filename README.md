@@ -1,1 +1,2 @@
-Debugging and the use of RUBBER DUCK - C Programming
+C - PROGRAMMING
+DATA STRUCTURES AND ALGORITHM

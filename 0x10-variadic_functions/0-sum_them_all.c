@@ -5,7 +5,7 @@
  * sum_them_all - the function returns the sum of it
  * parameters
  * @n: argument size
- * Return: sum
+ * Return: 0
  */
 int sum_them_all(const unsigned int n, ...)
 {

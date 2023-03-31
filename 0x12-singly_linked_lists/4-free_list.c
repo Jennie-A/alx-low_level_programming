@@ -3,13 +3,16 @@
 /**
  * free_list - the function frees list_t list
  * @head: pointer to first node
- * Return: pointer
+ * Return: void
  */
 void free_list(list_t *head)
 {
-	for (list_t *current = head; current != NULL)
-	list_t *next = current->next;
+	while (head != NULL)
+	{
+		list_t *next_node = head->next;
 
-	free(current);
-	current = next;
+		free(head->str);
+		free(head);
+
+		head = next_node;
 }

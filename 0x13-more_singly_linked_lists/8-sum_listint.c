@@ -9,7 +9,7 @@
  */
 
 /**
- * craete a temporary pointer to traverse the link
+ * create a temporary pointer to traverse the link
  * check if head is NULL, if it is, return NULL
  * use temp to access each values in the link and add recursively
  * this function can either add use recursion or a loop

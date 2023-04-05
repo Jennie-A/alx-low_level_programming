@@ -8,11 +8,9 @@
 
 void free_list(list_t *head)
 {
+	if (head == 0)
+		return;
 
-	for (list_t *current_node = head; current_node != NULL;)
-	{
-		head = head->next;
-		free(current_node->str);
-		free(current_node);
-	}
+	free_list(head->next);
+	free(head);
 }

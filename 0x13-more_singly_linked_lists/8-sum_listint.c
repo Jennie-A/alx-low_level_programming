@@ -8,6 +8,13 @@
  * Return: else sum
  */
 
+/**
+ * craete a temporary pointer to traverse the link
+ * check if head is NULL, if it is, return NULL
+ * use temp to access each values in the link and add recursively
+ * this function can either add use recursion or a loop
+ */
+
 int sum_listint(listint_t *head)
 {
 	listint_t *temp;

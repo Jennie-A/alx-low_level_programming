@@ -8,8 +8,8 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	if (index >= sizeof(unsigned long int) * 8) /*checks if index is within range of valid indices else, error of the given data type*/
+	if (index >= sizeof(unsigned long int) * 8)
 		return (-1);
 
-	return ((n >> index) & 1); /*if the index is within range n is shifted to the rightmost by 1, bitwise & is then implemented, 1 or 0 is returned*/ 
+	return ((n >> index) & 1);
 }

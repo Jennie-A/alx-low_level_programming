@@ -1,56 +1,61 @@
 #include "main.h"
 #include <fcntl.h>
-#include <unistd.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 /**
- * read_textfile - function that reads a text file
- * and print it to the POSIX standard output
- * @letters: number of letters it should read and print
- * @filename: pointer to a string
- * Return: actual number of letters it could read and print
- * or 0 if file cannot be opened or read
- * 0 if file is NULL
- * 0 if "write" fails or does not write the expected amount of bytes
+ * read_textfile - this function reads and prints a file
+ * @filename: storage of file
+ * @letters: holds the number of letters
+ *
+ * Return: actual number of letters read
+ * or 0 if file cannot be read or opened
+ * or if file name is NULL, 0
+ * if write fails, 0
  */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t read_bytes, bytes_written;
-	char *buf = NULL;
-	FILE *fp;
+	int n;
+	char *buf;
+	ssize_t reads, written_text;
+
+	if (filename == NULL)
+		return (0);
+
+	n = open(filename, O_RDONLY);
+	if (n == -1)
+	{
+		return (0);
+	}
 
 	buf = malloc(sizeof(char) * (letters + 1));
+	if (buf == NULL)
 	{
-	if (!buf || !filename)
-		return (0);
-	}
-	fp = open(filename, "O_RDONLY");
-	{
-		if (!fp)
-		free(buf);
+		close(n);
 		return (0);
 	}
 
-	read_bytes = read(buf, sizeof(char), letters, fp);
+	reads = read(n, buf, letters);
+	if (reads == -1)
 	{
-		if (read_bytes < 0)
-		close(fp);
+		close(n);
 		free(buf);
-			return (0);
+		return (0);
 	}
 
 	buf[reads] = '\0';
 
-	bytes_written = write(STDOUT_FILENO, buf, read_bytes);
+	written_text = write(STDOUT_FILENO, buf, reads);
+	if ((written_text == -1) || (written_text != reads))
 	{
-	if (bytes_written < 0 || bytes_written != read_bytes)
-	close(fp);
-	free(buf);
+		close(n);
+		free(buf);
+		return (0);
 	}
 
-	close(fp);
+	close(n);
 	free(buf);
 
-	return (read_bytes);
+	return (reads);
 }
-

@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
@@ -30,7 +29,7 @@ int create_file(const char *filename, char *text_content)
 		length = strlen(text_content);
 		value = write(fds, text_content, length);
 	}
-	if (value != (ssize_t)length)
+	if (value == -1 || value != (ssize_t) length)
 	{
 		close(fds);
 		return (-1);

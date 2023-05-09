@@ -28,5 +28,5 @@ int append_text_to_file(const char *filename, char *text_content)
 	value = fputs(text_content, f);
 	fclose(f);
 
-	return (value == EOF) ? -1 : 1;
+	return ((value == EOF) ? -1 : 1);
 }

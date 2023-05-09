@@ -15,7 +15,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t read_bytes, bytes_written = 0;
+	ssize_t read_bytes, bytes_written;
 	char *buf = NULL;
 	FILE *fp;
 
@@ -24,17 +24,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!buf || !filename)
 		return (0);
 	}
-	fp = fopen(filename, "r");
+	fp = open(filename, "O_RDONLY");
 	{
 		if (!fp)
 		free(buf);
 		return (0);
 	}
 
-	read_bytes = fread(buf, sizeof(char), letters, fp);
+	read_bytes = read(buf, sizeof(char), letters, fp);
 	{
 		if (read_bytes < 0)
-		fclose(fp);
+		close(fp);
 		free(buf);
 			return (0);
 	}
@@ -44,11 +44,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	bytes_written = write(STDOUT_FILENO, buf, read_bytes);
 	{
 	if (bytes_written < 0 || bytes_written != read_bytes)
-	fclose(fp);
+	close(fp);
 	free(buf);
 	}
 
-	fclose(fp);
+	close(fp);
 	free(buf);
 
 	return (read_bytes);

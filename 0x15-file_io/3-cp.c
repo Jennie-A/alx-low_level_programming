@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	check_IO_stat(file_to, -1, argv[2], 'W');
 	while (num_read == 1024)
 	{
-		num_read = read(file_fr, buffer, sizeof(buffer));
+		num_read = read(file_f, buffer, sizeof(buffer));
 		if (num_read == -1)
 			check_IO_stat(-1, -1, argv[1], 'O');
 		wrote = write(file_to, buffer, num_read);
